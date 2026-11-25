@@ -1,7 +1,8 @@
 import os
 
 here = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(here, "entry.txt"), "rb") as source:
+source_path = os.path.join(here, "entry.txt")
+with open(source_path, "rb") as source:
     data = source.read()
 out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
 os.makedirs(out_dir, exist_ok=True)
